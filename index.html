@@ -2,58 +2,31 @@
 <html lang="en">
 <head>
     <!-- Google Tag Manager -->
-    <script>
-        (function(w,d,s,l,i){
-            w[l]=w[l]||[];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),
-                dl=l!='dataLayer'?'&l='+l:'';
-            j.async=true;
-            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-            f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-54Z65DSG');
-    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-54Z65DSG');</script>
     <!-- End Google Tag Manager -->
 
     <title>Example Webpage</title>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54Z65DSG"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54Z65DSG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <h1>显示 GTM 参数</h1>
-    <p>Key1: <span id="key1"></span></p>
-    <p>Key2: <span id="key2"></span></p>
+    <p>Key1: <span id="Key1"></span></p>
+    <p>Key2: <span id="Key2"></span></p>
 
     <script>
         window.addEventListener('load', function() {
-            // Ensure the GTM variables are pushed to the dataLayer first
-            var key1 = undefined;
-            var key2 = undefined;
+            const key1 = window.Key1 || "未定义";  // 如果没有值，显示“未定义”
+            const key2 = window.Key2 || "未定义";  // 如果没有值，显示“未定义”
 
-            // Accessing GTM variables from dataLayer
-            window.dataLayer.forEach(function(event) {
-                if (event.Key1) {
-                    key1 = event.Key1;
-                }
-                if (event.Key2) {
-                    key2 = event.Key2;
-                }
-            });
-
-            // If the variables are not found, assign a default value
-            key1 = key1 || "未定义";
-            key2 = key2 || "未定义";
-
-            // Displaying the values on the webpage
+            // 将这些值显示在网页中
             document.getElementById('key1').textContent = key1;
             document.getElementById('key2').textContent = key2;
         });
