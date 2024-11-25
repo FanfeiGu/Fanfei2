@@ -35,15 +35,25 @@
 
     <script>
         window.addEventListener('load', function() {
-            // 确保 GTM 中的变量正确传递到 window 对象中
-            var key1 = {{Key1}};  // 使用 GTM 变量
-            var key2 = {{Key2}};  // 使用 GTM 变量
+            // Ensure the GTM variables are pushed to the dataLayer first
+            var key1 = undefined;
+            var key2 = undefined;
 
-            // 如果变量为空，设置为"未定义"
+            // Accessing GTM variables from dataLayer
+            window.dataLayer.forEach(function(event) {
+                if (event.Key1) {
+                    key1 = event.Key1;
+                }
+                if (event.Key2) {
+                    key2 = event.Key2;
+                }
+            });
+
+            // If the variables are not found, assign a default value
             key1 = key1 || "未定义";
             key2 = key2 || "未定义";
 
-            // 将这些值显示在网页中
+            // Displaying the values on the webpage
             document.getElementById('key1').textContent = key1;
             document.getElementById('key2').textContent = key2;
         });
