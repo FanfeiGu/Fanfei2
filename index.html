@@ -19,6 +19,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <!-- Content of your website -->
         <h1>Welcome to My Website</h1>
+        <script>
+  function getCookieValue(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+
+  // Get and display values
+  document.getElementById("key1").innerText = getCookieValue("key1");
+  document.getElementById("key2").innerText = getCookieValue("key2");
+</script>
+
+<div>
+  <p>Key1: <span id="key1"></span></p>
+  <p>Key2: <span id="key2"></span></p>
+</div>
+
         <p>This is a sample paragraph on my webpage.</p>
     </body>
     </html>
