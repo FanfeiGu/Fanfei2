@@ -20,6 +20,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Content of your website -->
         <h1>Welcome to My Website</h1>
         <script>
+  document.cookie = "key1=" + {{Query Key1}} + "; path=/";
+  document.cookie = "key2=" + {{Query Key2}} + "; path=/";
+</script>
+        <script>
   function getCookieValue(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
