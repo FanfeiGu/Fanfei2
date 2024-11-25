@@ -17,18 +17,20 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <h1>显示 GTM 参数</h1>
-    <p>Key1: <span id="Key1"></span></p>
-    <p>Key2: <span id="Key2"></span></p>
+<h1>显示 URL 参数</h1>
+    <p>Key1: <span id="Key1">未定义</span></p>
+    <p>Key2: <span id="Key2">未定义</span></p>
 
     <script>
+        // 等待页面加载完成
         window.addEventListener('load', function() {
-            const key1 = window.Key1 || "未定义";  // 如果没有值，显示“未定义”
-            const key2 = window.Key2 || "未定义";  // 如果没有值，显示“未定义”
+            // 从 GTM 中设置的数据层变量提取值
+            const key1 = '{{Key1}}' || "未定义";  // GTM 中配置的 URL 变量
+            const key2 = '{{Key2}}' || "未定义";
 
-            // 将这些值显示在网页中
-            document.getElementById('key1').textContent = key1;
-            document.getElementById('key2').textContent = key2;
+            // 动态显示值到页面
+            document.getElementById('Key1').textContent = key1;
+            document.getElementById('Key2').textContent = key2;
         });
     </script>
 </body>
