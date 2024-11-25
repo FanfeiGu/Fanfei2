@@ -52,11 +52,14 @@
 
     // 调用 ire 函数传递用户数据
     ire('identify', {
-        customerid: '' /* INSERT key1 */,
-        customeremail: '' /* INSERT key2 */
+        customerid: key1  /* INSERT key1 */,
+        customeremail: key2  /* INSERT key2 */
+
+            
+    console.log('Customer ID:', key1);
+    console.log('Customer Email:', key2);
     });
 </script>
-
 
 </body>
 </html>
