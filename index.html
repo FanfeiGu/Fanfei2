@@ -18,14 +18,14 @@
     <!-- End Google Tag Manager (noscript) -->
 
 <h1>显示 GTM 参数</h1>
-    <p>Key1: <span id="key1"></span></p>
-    <p>Key2: <span id="key2"></span></p>
+    <p>key1: <span id="key1"></span></p>
+    <p>key2: <span id="key2"></span></p>
 
 <script>
     // 确保 DOM 已加载
     document.addEventListener('DOMContentLoaded', () => {
-        const key1 = window.Key1 || '未定义';
-        const key2 = window.Key2 || '未定义';
+        const key1 = window.key1 || '未定义';
+        const key2 = window.key2 || '未定义';
 
         document.getElementById('key1').textContent = key1;
         document.getElementById('key2').textContent = key2;
