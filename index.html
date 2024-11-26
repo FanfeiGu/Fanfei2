@@ -10,6 +10,17 @@
     <!-- End Google Tag Manager -->
 
     <title>Example Webpage</title>
+      <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // 从 window 对象中获取 Key1 和 Key2 的值
+        const key1 = window.Key1 || 'No value for key1';
+        const key2 = window.Key2 || 'No value for key2';
+
+        // 更新页面中的内容
+        document.getElementById('key1-display').textContent = key1;
+        document.getElementById('key2-display').textContent = key2;
+    });
+  </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -17,18 +28,9 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-<h1>显示 GTM 参数</h1>
-    <p>Key1: <span id="key1"></span></p>
-    <p>Key2: <span id="key2"></span></p>
-
-    <script>
-        // 从 window 对象中获取 GTM 中存储的 Key1 和 Key2 的值
-        const key1 = window.Key1 || '未定义';
-        const key2 = window.Key2 || '未定义';
-
-        // 将这些值显示在网页中
-        document.getElementById('key1').textContent = key1;
-        document.getElementById('key2').textContent = key2;
-    </script>
+  <h1>URL Parameters</h1>
+  <p><strong>Key1:</strong> <span id="key1-display"></span></p>
+  <p><strong>Key2:</strong> <span id="key2-display"></span></p>
+</body>
 </body>
 </html>
