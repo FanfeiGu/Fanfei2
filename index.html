@@ -23,8 +23,8 @@
     <script>
      window.addEventListener('load', function(){
         // 从 window 获取 GTM 存储的 Key1 和 Key2 的值
-        let key1 = window.Key1 || 'undefined';
-        let key2 = window.Key2 || 'undefined';
+        const key1 = window.Key1 || 'undefined';
+        const key2 = window.Key2 || 'undefined';
 
         // 打印
         document.getElementById('key1-display').textContent = key1;
@@ -48,8 +48,8 @@
                 window
             ); 
          ire('identify', {
-                customerid: Key1,
-                customeremail: Key2
+                customerid: key1,
+                customeremail: key2
             });
         });
     </script>
