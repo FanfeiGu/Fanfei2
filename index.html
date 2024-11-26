@@ -22,10 +22,15 @@
     <p>key2: <span id="displayKey2"></span></p>
 
     <script>
+        // 从 window 对象中获取 GTM 中存储的 Key1 和 Key2 的值
+        const key1 = window.key1 || '未定义';
+        const key2 = window.key2 || '未定义';
+
         // 将这些值显示在网页中
-        document.getElementById('displayKey1').textContent = window.key1;
-        document.getElementById('displayKey2').textContent = window.key1;
+        document.getElementById('displayKey1').textContent = key1;
+        document.getElementById('displayKey2').textContent = key2;
     </script>
+
 
 </body>
 </html>
