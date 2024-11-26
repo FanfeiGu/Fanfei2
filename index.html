@@ -21,16 +21,15 @@
     <p>key1: <span id="key1"></span></p>
     <p>key2: <span id="key2"></span></p>
 
-<script>
-    // 确保 DOM 已加载
-    document.addEventListener('DOMContentLoaded', () => {
+    <script>
+        // 从 window 对象中获取 GTM 中存储的 Key1 和 Key2 的值
         const key1 = window.key1 || '未定义';
         const key2 = window.key2 || '未定义';
 
+        // 将这些值显示在网页中
         document.getElementById('key1').textContent = key1;
         document.getElementById('key2').textContent = key2;
-    });
-</script>
+    </script>
 
 </body>
 </html>
